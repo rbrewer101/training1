@@ -36,6 +36,11 @@ server.get(/\/docs\/public\/?.*/, restify.serveStatic({
  */
 server.post('/api/v1/users', api.postUserV1);
 
+/*
+ * REST DELETE : Delete user
+ */
+server.post('/api/v1/userRemove', api.removeUserV1);
+
 
 /*
  * Start MongoDB and Node.js server

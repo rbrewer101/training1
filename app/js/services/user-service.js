@@ -32,6 +32,7 @@
                 });
         };
 
+
         // API createUser
         UserService.createUser = function(newUser, callback) {
 
@@ -40,6 +41,26 @@
                     "method" : "POST",
                     "url" : "/api/v1/users",
                     "data" : newUser
+                })
+                .success(function(data, status, headers, config) {
+
+                    callback(false, status);
+                })
+                .error(function(data, status, headers, config) {
+
+                    callback(true, status);
+                });
+        };
+
+
+        // API removeUser
+        UserService.removeUser = function(delUser, callback) {
+
+            $http(
+                {
+                    "method" : "POST",
+                    "url" : "/api/v1/userRemove",
+                    "data" : delUser
                 })
                 .success(function(data, status, headers, config) {
 

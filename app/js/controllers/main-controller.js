@@ -16,6 +16,17 @@
             'lastName': ''
         };
 
+
+        $scope.removeUser = function(delUser){
+
+            console.log("DEBUG:  MainCtrl : removeUser : item: ", delUser)
+
+            userService.removeUser(delUser, function(err, status) {
+
+                console.log("DEBUG: MainCtrl : item:  ", delUser), " passed to UserService.removeUser";
+            });
+        };
+
         $scope.createUser = function() {
 
             //console.log("DEBUG: user : ", $scope.newUser);
